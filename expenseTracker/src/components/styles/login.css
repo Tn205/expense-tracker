@@ -1,0 +1,247 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--deep-blue-darker);
+  background-image: linear-gradient(135deg, 
+      var(--deep-blue-darkest) 0%, 
+      var(--deep-blue-darker) 40%, 
+      var(--deep-blue-main) 100%);
+  padding-top: 6rem;
+  padding-bottom: 2rem;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Background elements */
+.login-container::before {
+  content: '';
+  position: absolute;
+  top: 15%;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  background: var(--amber-main);
+  filter: blur(150px);
+  opacity: 0.2;
+  z-index: 0;
+  border-radius: 50%;
+}
+
+.login-container::after {
+  content: '';
+  position: absolute;
+  bottom: 5%;
+  left: -50px;
+  width: 250px;
+  height: 250px;
+  background: var(--deep-blue-light);
+  filter: blur(120px);
+  opacity: 0.15;
+  z-index: 0;
+  border-radius: 50%;
+}
+
+.login-card {
+  height: max-content;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 25rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.login-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(to right, var(--amber-main), var(--amber-light));
+  box-shadow: 0 2px 8px rgba(249, 168, 38, 0.3);
+}
+
+.title {
+  margin-bottom: 1.5rem;
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+  display: inline-block;
+}
+
+.title-register {
+  margin-bottom: 1.5rem;
+  color: black;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 20%;
+  width: 60%;
+  height: 3px;
+  background-color: var(--amber-main);
+  border-radius: 1.5px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  text-align: left;
+  font-weight: 600;
+  margin: 0.8rem 0 0.3rem;
+  color: var(--white);
+  font-size: 1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.login-card input {
+  width: 94%;
+  padding: 0.9rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--white);
+  transition: var(--transition-quick);
+}
+
+.login-card input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.login-card input:focus {
+  outline: none;
+  border-color: var(--amber-main);
+  box-shadow: 0 0 0 2px rgba(249, 168, 38, 0.2);
+}
+
+.toggle-password {
+  position: absolute;
+  right: 0.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: var(--white);
+  opacity: 0.8;
+}
+
+.toggle-password:hover {
+  opacity: 1;
+  color: var(--amber-main);
+}
+
+.actions {
+  margin-top: 2rem;
+}
+
+.btn-login {
+  border: none !important;
+  background: linear-gradient(to right, var(--amber-main), var(--amber-light));
+  color: var(--deep-blue-darker);
+  margin: auto;
+  padding: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  width: 100%;
+  transition: var(--transition-quick);
+  letter-spacing: 0.03rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-login:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(249, 168, 38, 0.4);
+}
+
+.register-link {
+  margin-top: 1.8rem;
+  color: var(--white);
+  font-size: 1rem;
+}
+
+.register-link a {
+  color: var(--amber-light);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition-quick);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.register-link a:hover {
+  color: var(--amber-lighter);
+  text-decoration: underline;
+}
+
+/* Wrapper for the input field */
+.input-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1.2rem;
+}
+
+/* Input field with error: Red border */
+.input-error {
+  border: 1px solid var(--accent-error) !important;
+  box-shadow: 0 0 0 2px rgba(244, 67, 54, 0.2);
+}
+
+/* Error message positioned on the border */
+.login-error-message {
+  position: absolute;
+  top: -0.8rem;
+  left: 1rem;
+  background: rgba(244, 67, 54, 0.15);
+  color: #ff7961;
+  font-size: 0.8rem;
+  padding: 0.2rem 0.6rem;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .login-card {
+    width: 90%;
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    padding: 1rem;
+    padding-top: 5.5rem;
+  }
+  
+  .login-card {
+    padding: 1.5rem;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+  }
+  
+  .btn-login {
+    font-size: 1rem;
+    padding: 0.9rem;
+  }
+}
+
+

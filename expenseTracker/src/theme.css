@@ -1,0 +1,196 @@
+:root {
+  /* Main colors */
+  --deep-blue-darkest: #0a1929;
+  --deep-blue-darker: #102a43;
+  --deep-blue-main: #1d3557;
+  --deep-blue-light: #274b77;
+  --deep-blue-lighter: #375f97;
+  
+  /* Amber colors */
+  --amber-darkest: #996000;
+  --amber-darker: #bf7500;
+  --amber-main: #f9a826;
+  --amber-light: #ffb74d;
+  --amber-lighter: #ffd180;
+  
+  /* Accent colors */
+  --accent-success: #4caf50;
+  --accent-error: #f44336;
+  --accent-info: #2196f3;
+  
+  /* Neutral colors */
+  --white: #ffffff;
+  --light-grey: #f8f9fa;
+  --medium-grey: #e0e0e0;
+  --dark-grey: #616161;
+  --black: #222222;
+  
+  /* Text colors */
+  --text-dark: #263238;
+  --text-light: #f8f9fa;
+  --text-muted: #757575;
+  
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --glass-blur: blur(10px);
+  
+  /* Gradients */
+  --blue-gradient: linear-gradient(135deg, 
+    var(--deep-blue-darkest) 0%, 
+    var(--deep-blue-darker) 40%, 
+    var(--deep-blue-main) 100%);
+  --amber-gradient: linear-gradient(to right, 
+    var(--amber-main), 
+    var(--amber-light));
+  
+  /* Common styles */
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --border-radius: 0.5rem;
+  --transition-quick: all 0.2s ease-in-out;
+  --transition-medium: all 0.3s ease-in-out;
+}
+
+/* Apply base styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--deep-blue-darker);
+  background-image: var(--blue-gradient);
+  color: var(--white);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Common button styles */
+.btn-primary {
+  background: var(--deep-blue-main);
+  color: var(--white);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: var(--transition-quick);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary:hover {
+  background: var(--deep-blue-light);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+  background: var(--amber-gradient);
+  color: var(--deep-blue-darker);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: var(--transition-quick);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(249, 168, 38, 0.4);
+}
+
+/* Glass card styling */
+.card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-radius: var(--border-radius);
+  box-shadow: var(--glass-shadow);
+  border: 1px solid var(--glass-border);
+  padding: 1.5rem;
+  color: var(--white);
+}
+
+/* Glass card with accent */
+.card-accent {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-accent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--amber-gradient);
+  z-index: 1;
+}
+
+/* Status colors */
+.success-text {
+  color: var(--accent-success);
+}
+
+.error-text {
+  color: var(--accent-error);
+}
+
+.info-text {
+  color: var(--accent-info);
+}
+
+/* Toast container positioning */
+.toast-container {
+  top: 5rem;
+}
+
+/* Animated background shapes */
+.animated-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  z-index: 0;
+  animation: float 10s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(20px, -30px);
+  }
+}
+
+/* Input field styling */
+.input-field {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  color: var(--white);
+  transition: var(--transition-quick);
+}
+
+.input-field:focus {
+  border-color: var(--amber-main);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(249, 168, 38, 0.2);
+}
+
+/* Loader animation */
+.loader {
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  border-top: 3px solid var(--amber-main);
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+} 

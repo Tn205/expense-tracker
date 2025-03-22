@@ -1,0 +1,150 @@
+.register-container {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--deep-blue-lighter);
+  background-image: linear-gradient(to bottom right, var(--deep-blue-darker), var(--deep-blue-main));
+  padding-top: 6rem;
+  padding-bottom: 2rem;
+}
+
+.register-card {
+  height: max-content;
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  width: 25rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.register-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: var(--amber-main);
+}
+
+.title {
+  margin-bottom: 1.5rem;
+  color: black;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.register-card form {
+  display: flex;
+  flex-direction: column;
+}
+
+.register-card label {
+  text-align: left;
+  font-weight: 500;
+  margin: 0.8rem 0 0.3rem;
+  color: var(--deep-blue-darker);
+  font-size: 0.95rem;
+}
+
+.register-card input {
+  width: 94%;
+  padding: 0.9rem;
+  border-radius: 4px;
+  border: 1px solid var(--medium-grey);
+  font-size: 1rem;
+  transition: var(--transition-quick);
+}
+
+.register-card input:focus {
+  outline: none;
+  border-color: var(--deep-blue-main);
+  box-shadow: 0 0 0 2px rgba(29, 53, 87, 0.2);
+}
+
+.toggle-password {
+  position: absolute;
+  right: 0.7rem;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: var(--deep-blue-light);
+}
+
+.actions {
+  margin-top: 1.5rem;
+}
+
+.btn-register {
+  border: none !important;
+  background-color: var(--deep-blue-main);
+  color: var(--white);
+  margin: auto;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  width: 100%;
+  transition: var(--transition-quick);
+  letter-spacing: 0.03rem;
+}
+
+.btn-register:hover {
+  background-color: var(--deep-blue-light);
+  transform: translateY(-2px);
+}
+
+.login-link {
+  margin-top: 1.5rem;
+  color: var(--text-dark);
+}
+
+.login-link a {
+  color: var(--amber-darker);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition-quick);
+}
+
+.login-link a:hover {
+  color: var(--amber-main);
+  text-decoration: underline;
+}
+
+/* Wrapper for inputs */
+.input-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+/* Input error state */
+.input-error {
+  border: 1px solid var(--accent-error) !important;
+  box-shadow: 0 0 0 2px rgba(244, 67, 54, 0.2);
+}
+
+/* Error message inside the border */
+.register-error-message {
+  position: absolute;
+  top: -0.8rem;
+  left: 1rem;
+  background: white;
+  color: var(--accent-error);
+  font-size: 0.8rem;
+  padding: 0 0.3rem;
+  font-weight: 500;
+}
+
+/* Responsive Fix */
+@media (max-width: 700px) {
+  .register-card {
+    width: 85%;
+    padding: 2rem;
+  }
+}

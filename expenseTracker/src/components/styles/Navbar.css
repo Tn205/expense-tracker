@@ -1,0 +1,148 @@
+/* General Reset */
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+/* Navbar Wrapper */
+.navbar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: var(--deep-blue-darkest);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--deep-blue-darkest);
+  color: var(--white);
+  height: 3.5rem;
+  padding: 0 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔹 Navbar Links (Large Screens - Horizontal Layout) */
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 0;
+  padding-right: 2rem;
+}
+
+.nav-links li .link {
+  display: block;
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 1rem;
+  transition: var(--transition-medium);
+  border-bottom: 2px solid transparent;
+}
+
+.nav-links li .link:hover {
+  background: rgba(249, 168, 38, 0.2);
+  color: var(--amber-light);
+  border-bottom: 2px solid var(--amber-main);
+}
+
+/* 🔹 Menu Button (Hidden on Large Screens) */
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--amber-main);
+  cursor: pointer;
+}
+
+/* 🔹 Sidebar (Small Screens - Initially Hidden) */
+.sidebar {
+  display: none;
+}
+
+/* Sidebar Open */
+.sidebar.open {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 14rem;
+  height: 100vh;
+  background-color: var(--deep-blue-darker);
+  color: var(--white);
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+  transition: right 0.3s ease-in-out;
+  padding-top: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Sidebar Navigation Links */
+.sidebar ul {
+  list-style: none;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar ul li {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar ul li .link {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1.1rem;
+  display: block;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 4px;
+  transition: var(--transition-quick);
+  border-left: 3px solid transparent;
+}
+
+.sidebar ul li .link:hover {
+  background: rgba(249, 168, 38, 0.15);
+  color: var(--amber-light);
+  border-left: 3px solid var(--amber-main);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-weight: 500;
+  /* color: var(--amber-main); */
+  background: linear-gradient(to right, #4ecdc4, #38b2ac, #4ecdc4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.logo img {
+  height: 2.8rem;
+  border-radius: 50%;
+  border: 2px solid var(--amber-main);
+}
+
+/* 🔹 Responsive Design (Small Screens) */
+@media (max-width: 800px) {
+  /* Hide navbar links on small screens */
+  .nav-links {
+    display: none;
+  }
+
+  /* Show Menu Button */
+  .menu-btn {
+    display: block;
+  }
+}
